@@ -4,9 +4,9 @@ metadata:
   name: product-service
 spec:
   selector:
-    app: product  
+    app: auth
   ports:
     - protocol: TCP
       port: 80      
-      targetPort: 3000
+      targetPort: 3001
   type: LoadBalancer
