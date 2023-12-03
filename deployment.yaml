@@ -13,7 +13,7 @@ spec:
         app: auth
     spec:
       containers:
-        - name: auth-prod
+        - name: auth
           image: gcr.io/project-1-400619/auth
           imagePullPolicy: Always
           
