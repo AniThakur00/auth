@@ -74,62 +74,7 @@ const { signout, signup, signin, isSignedIn } = require("../controllers/auth")
 
 
 
-/**
- * @swagger
- * /signin:
- *   post:
- *     summary: Sign in a new user
- *     requestBody:
- *       required: true
- *       content:
- *         application/json:
- *           schema:
- *             $ref: '#/components/schemas/UserReq'
- *     responses:
- *       200:
- *         description: Use to sign in user.
- *         content:
- *           application/json:
-*             schema:
- *               type: object
- *               properties:
- *                 success: error message
- *       500:
- *         description: Some server error
- *         content:
- *           application/json:
-*             schema:
- *               type: object
- *               properties:
- *                 error: error message
- * /signup:
- *   post:
- *     summary: Sign up a new user
- *     requestBody:
- *       required: true
- *       content:
- *         application/json:
- *           schema:
- *             $ref: '#/components/schemas/SignUpReq'
- *     responses:
- *       200:
- *         description: Use to sign up user.
- *         content:
- *           application/json:
-*             schema:
- *               type: object
- *               properties:
- *                 success: error message
- *       500:
- *         description: Some server error
- *         content:
- *           application/json:
-*             schema:
- *               type: object
- *               properties:
- *                 error: error message
- *                   
- */
+
 router.post('/signup', [
     check("name", "name should be atleast 3 character").isLength({ min: 3 }),
     check("email", "email is required").isEmail(),
