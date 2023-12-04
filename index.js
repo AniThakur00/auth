@@ -34,7 +34,7 @@ mongoose.connect(process.env.DATABASE, { useNewUrlParser: true, useUnifiedTopolo
 
 //My Routes
 
-app.use('/api', authRoutes)
+app.use('/auth', authRoutes)
 
 
 
