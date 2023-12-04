@@ -23,6 +23,11 @@ app.get('/', (req, res) => {
     message: "ITS WORKING IN " + process.env.ENV
   })
 })
+app.get('/auth', (req, res) => {
+  return res.status(200).json({
+    message: "ITS WORKING IN " + process.env.ENV
+  })
+})
 
 //Database Connection
 mongoose.connect(process.env.DATABASE, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
@@ -34,7 +39,7 @@ mongoose.connect(process.env.DATABASE, { useNewUrlParser: true, useUnifiedTopolo
 
 //My Routes
 
-app.use('/auth', authRoutes)
+app.use('/auth/api', authRoutes)
 
 
 
