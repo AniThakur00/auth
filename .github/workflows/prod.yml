@@ -25,7 +25,7 @@ jobs:
           export_default_credentials: true
       
       - name: Set Kubectl Context
-        run: gcloud container clusters get-credentials auth-prod --zone us-central1 --project project-1-400619 
+        run: gcloud container clusters get-credentials prod --zone us-central1 --project project-1-400619 
 
       - name: Configure docker for GCP
         run: gcloud auth configure-docker gcr.io
