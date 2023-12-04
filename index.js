@@ -44,7 +44,7 @@ app.use('/api', authRoutes)
 
 
 //Port Number and Starting The Server
-const port = 3000 || process.env.PORT
+const port = 3001 || process.env.PORT
 app.listen(port, () => {
   console.log(`Server Started on ${port}`)
 })
