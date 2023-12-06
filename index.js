@@ -39,7 +39,7 @@ mongoose.connect(process.env.DATABASE, { useNewUrlParser: true, useUnifiedTopolo
 
 //My Routes
 
-app.use('/auth/api', authRoutes)
+app.use('/api', authRoutes)
 
 
 
@@ -50,6 +50,8 @@ app.use('/auth/api', authRoutes)
 
 //Port Number and Starting The Server
 const port = 3001 || process.env.PORT
-app.listen(port, () => {
+const server = app.listen(port, () => {
   console.log(`Server Started on ${port}`)
 })
+
+module.exports = { app, server }
