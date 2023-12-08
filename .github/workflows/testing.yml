@@ -16,9 +16,12 @@ jobs:
         uses: tanayvan/GithubCustomActions@v1
         with:
           gcloud_service_key: ${{ secrets.GCLOUD_SERVICE_KEY }}
+      - name: Installing Dependencies
+        run: |
+          npm install
       - name: Run Unit Testing
         run: |
-         jest --forceExit >> test-results.txt  2>&1
+          jest --forceExit >> test-results.txt  2>&1
       - name: Uploading  Test results
         uses: actions/upload-artifact@v3
         with:
