@@ -21,7 +21,7 @@ jobs:
           npm install
       - name: Run Unit Testing
         run: |
-          jest --forceExit >> test-results.txt  2>&1
+         npx  jest --forceExit >> test-results.txt  2>&1
       - name: Uploading  Test results
         uses: actions/upload-artifact@v3
         with:
