@@ -1,0 +1,60 @@
+
+> auth@1.0.0 test
+> jest --forceExit
+
+  console.log
+    testingtanay46@example.com
+
+      at log (tests/auth.test.js:10:13)
+
+  console.log
+    Database Connected
+
+      at log (index.js:35:13)
+
+  console.log
+    {
+      name: 'Test User',
+      email: 'testingtanay46@example.com',
+      id: '6572ae5acf2fe17a4eabbacd'
+    }
+
+      at Object.log (tests/auth.test.js:19:17)
+
+
+> auth@1.0.0 test
+> jest --forceExit
+
+  console.log
+    testingtanay562@example.com
+
+      at log (tests/auth.test.js:10:13)
+
+(node:31480) [DEP0170] DeprecationWarning: The URL mongodb://bogg:Rock%401999@cluster0-shard-00-01.g89xp.mongodb.net:27017,cluster0-shard-00-02.g89xp.mongodb.net:27017,cluster0-shard-00-00.g89xp.mongodb.net:27017/?authSource=admin&replicaSet=Cluster0-shard-0&retryWrites=true&w=majority&ssl=true is invalid. Future versions of Node.js will throw an error.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+  console.log
+    Database Connected
+
+      at log (index.js:35:13)
+
+  console.log
+    {
+      name: 'Test User',
+      email: 'testingtanay562@example.com',
+      id: '6572af386a598a7af84e7e6b'
+    }
+
+      at Object.log (tests/auth.test.js:19:17)
+
+PASS tests/auth.test.js (5.535 s)
+  User Authentication API
+    ✓ should sign up a new user (4738 ms)
+    ✓ should sign in an existing user (234 ms)
+    ✓ should sign out a user (2 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       3 passed, 3 total
+Snapshots:   0 total
+Time:        5.56 s
+Ran all test suites.
+Force exiting Jest: Have you considered using `--detectOpenHandles` to detect async operations that kept running after all tests finished?
