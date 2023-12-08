@@ -39,6 +39,15 @@ jobs:
       - name: Set Kubectl Context
         run: gcloud container clusters get-credentials testing --zone us-central1 --project project-1-400619
 
+      - name: Run Unit Testing
+        run: |
+          npm run test >> test-results.txt  2>&1
+      - name: Uploading  Test results
+        uses: actions/upload-artifact@v3
+        with:
+          name: node-unit-tests-${{ github.run_number }}
+          path: |
+            test-results.txt
       - name: Deploy to GKE
         run: |
           docker pull gcr.io/project-1-400619/auth:latest
