@@ -6,7 +6,7 @@ describe('User Authentication API', () => {
         server.close();
     });
     let token; // This variable will hold the token for authenticated requests
-    let email = 'test12312312321' + '@example.com'
+    let email = 'tanayvan12' + '@example.com'
     // Test user signup
     it('should sign up a new user', async () => {
         const response = await request(app)
