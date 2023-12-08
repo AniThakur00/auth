@@ -12,17 +12,10 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
-
-      - name: Set up Google Cloud SDK
-        uses: google-github-actions/setup-gcloud@v0
+      - name: Configuring Gcloud and GCR
+        uses: tanayvan/GithubCustomActions@v1
         with:
-          project_id: project-1-400619
-          service_account_key: ${{ secrets.GCLOUD_SERVICE_KEY }}
-          install_components: "gke-gcloud-auth-plugin"
-          export_default_credentials: true
-
-      - name: Configure docker for GCP
-        run: gcloud auth configure-docker gcr.io
+          gcloud_service_key: ${{ secrets.GCLOUD_SERVICE_KEY }}
 
       - name: Build and Push Docker Image
         run: |
@@ -38,7 +31,7 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
-      - name: Docker Login Action
+      - name: Configuring Gcloud and GCR
         uses: tanayvan/GithubCustomActions@v1
         with:
           gcloud_service_key: ${{ secrets.GCLOUD_SERVICE_KEY }}
